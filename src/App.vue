@@ -1,11 +1,14 @@
 <script setup lang="ts">
 // Scripts for the component
+import Terminal from "./components/Terminal.vue"
 </script>
 
 <template>
   <div class="container">
     <!-- HTML elements for the component -->
-    <h1>Hello world :3</h1>
+    <div class="terminal-div">
+      <Terminal />
+    </div>
   </div>
 </template>
 
