@@ -3,6 +3,7 @@
 
 use portable_pty::{native_pty_system, CommandBuilder, PtyPair, PtySize};
 use std::{
+    env,
     io::{BufRead, BufReader, Write},
     sync::{Arc, Mutex},
     thread::{self, sleep},
@@ -47,11 +48,22 @@ fn main() {
         })
         .unwrap();
 
-    #[cfg(target_os = "windows")]
-    let cmd = CommandBuilder::new("powershell.exe");
-    #[cfg(not(target_os = "windows"))]
-    let cmd = CommandBuilder::new("bash");
+    let cmd: CommandBuilder;
 
+    #[cfg(target_os = "windows")]
+    {
+        cmd = CommandBuilder::new("powershell.exe");
+    }
+
+    #[cfg(not(target_os = "windows"))]
+    {
+        let user_shell = match env::var("SHELL") {
+            Ok(shell) => shell,
+            Err(_) => "bash".to_string(),
+        };
+        cmd = CommandBuilder::new(user_shell);
+    }
+    
     let mut child = pty_pair.slave.spawn_command(cmd).unwrap();
 
     thread::spawn(move || {
