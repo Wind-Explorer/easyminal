@@ -112,6 +112,11 @@ button:active {
   background: var(--border-color);
 }
 
+/* Corner of scroll areas */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #202020;

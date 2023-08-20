@@ -8,10 +8,7 @@ import { Event, listen } from "@tauri-apps/api/event";
 
 window.addEventListener('DOMContentLoaded', () => {
   const terminalElement = document.getElementById("terminal") as HTMLElement;
-
-  var prev_rows = 0;
-  var prev_cols = 0;
-
+  
   const fitAddon = new FitAddon();
   const term = new Terminal({
     fontFamily: "Jetbrains Mono",
