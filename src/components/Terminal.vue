@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
   term.onData(writeToPty);
-  addEventListener("resize", fitTerminal);
+  window.addEventListener("resize", fitTerminal);
   listen("data", writeToTerminal)
   fitTerminal();
 })

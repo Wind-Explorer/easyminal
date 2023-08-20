@@ -6,8 +6,32 @@ import Terminal from "./components/Terminal.vue"
 <template>
   <div class="container">
     <!-- HTML elements for the component -->
-    <div class="terminal-div">
-      <Terminal class="terminal" />
+    <div class="left-panel">
+      <div class="command-snippets-panel">
+        <div class="command-snippets-search-div">
+          <input id="command-snippets-search" type="text" placeholder="Search snippets" />
+        </div>
+        <div class="separator"></div>
+        <button>List content of directory</button>
+        <button>Move into another directory</button>
+        <button>Delete a file</button>
+        <button>Create a new file</button>
+        <button>List content of directory</button>
+        <button>Move into another directory</button>
+        <button>Delete a file</button>
+        <button>Create a new file</button>
+      </div>
+    </div>
+    <div class="right-panel">
+      <div class="terminal-div">
+        <Terminal class="terminal" />
+      </div>
+      <div class="shortcuts-row">
+        <button>List content of directory</button>
+        <button>Move into another directory</button>
+        <button>Delete a file</button>
+        <button>Create a new file</button>
+      </div>
     </div>
   </div>
 </template>
@@ -18,19 +42,59 @@ import Terminal from "./components/Terminal.vue"
   --module-margin: 10px;
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  height: 100vh;
+  width: 100%;
+}
+
 .terminal-div {
-  position: fixed;
-  left: 20px;
-  right: 20px;
-  top: 20px;
-  bottom: 20px;
-  padding: 10px;
+  position: relative;
+  padding: 20px;
   background-color: #2f2f2f;
-  border-radius: var(--universal-border-radius);
-  border: 1px solid var(--border-color);
+  height: 100%;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-bottom-left-radius: var(--universal-border-radius);
 }
 
 .terminal {
   height: 100%;
+}
+
+.shortcuts-row {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.command-snippets-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 10px;
+  width: 180px;
+}
+
+.command-snippets-panel button {
+  text-align: left;
+}
+
+#command-snippets-search {
+  min-width: 0;
+  width: calc(100% - 25px);
+}
+
+.separator {
+  height: 1px;
+  background-color: var(--border-color);
 }
 </style>
