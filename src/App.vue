@@ -84,10 +84,9 @@ import Terminal from "./components/Terminal.vue"
   display: flex;
   gap: 10px;
   padding-bottom: 10px;
-  padding-right: 10px;
   overflow: scroll;
   white-space: nowrap;
-  min-height: 35px;
+  min-height: 42px;
 }
 
 .command-snippets-panel {

@@ -86,6 +86,32 @@ button:active {
   filter: opacity(0.7) brightness(0.98);
 }
 
+/* Scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 5px;
+  border-radius: var(--universal-border-radius);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: var(--universal-border-radius);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--background-color-fade);
+  border-radius: var(--universal-border-radius);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-color);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background-color: #202020;
