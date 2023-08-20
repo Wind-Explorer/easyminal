@@ -1,6 +1,8 @@
 <script setup lang="ts">
 // Scripts for the component
 import Terminal from "./components/Terminal.vue"
+import CommandShortcuts from "./components/CommandShortcuts.vue";
+import WebSnippets from "./components/WebSnippets.vue";
 </script>
 
 <template>
@@ -12,14 +14,7 @@ import Terminal from "./components/Terminal.vue"
           <input id="command-snippets-search" type="text" placeholder="Search snippets" />
         </div>
         <div class="separator"></div>
-        <button>List content of directory</button>
-        <button>Move into another directory</button>
-        <button>Delete a file</button>
-        <button>Create a new file</button>
-        <button>List content of directory</button>
-        <button>Move into another directory</button>
-        <button>Delete a file</button>
-        <button>Create a new file</button>
+        <WebSnippets />
       </div>
     </div>
     <div class="right-panel">
@@ -27,14 +22,7 @@ import Terminal from "./components/Terminal.vue"
         <Terminal class="terminal" />
       </div>
       <div class="shortcuts-row">
-        <button>List content of directory</button>
-        <button>Move into another directory</button>
-        <button>Delete a file</button>
-        <button>Create a new file</button>
-        <button>List content of directory</button>
-        <button>Move into another directory</button>
-        <button>Delete a file</button>
-        <button>Create a new file</button>
+        <CommandShortcuts />
       </div>
     </div>
   </div>
@@ -48,7 +36,6 @@ import Terminal from "./components/Terminal.vue"
 
 .container {
   display: flex;
-  flex-direction: row;
   justify-content: stretch;
 }
 
@@ -81,8 +68,6 @@ import Terminal from "./components/Terminal.vue"
 
 .shortcuts-row {
   position: relative;
-  display: flex;
-  gap: 10px;
   padding-bottom: 10px;
   overflow: scroll;
   white-space: nowrap;
