@@ -31,6 +31,10 @@ import Terminal from "./components/Terminal.vue"
         <button>Move into another directory</button>
         <button>Delete a file</button>
         <button>Create a new file</button>
+        <button>List content of directory</button>
+        <button>Move into another directory</button>
+        <button>Delete a file</button>
+        <button>Create a new file</button>
       </div>
     </div>
   </div>
@@ -45,14 +49,20 @@ import Terminal from "./components/Terminal.vue"
 .container {
   display: flex;
   flex-direction: row;
+  justify-content: stretch;
 }
 
 .right-panel {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-grow: 1;
+  overflow: hidden;
   height: 100vh;
-  width: 100%;
+}
+
+.left-panel {
+  min-width: 200px;
 }
 
 .terminal-div {
@@ -73,7 +83,11 @@ import Terminal from "./components/Terminal.vue"
   position: relative;
   display: flex;
   gap: 10px;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  overflow: scroll;
+  white-space: nowrap;
+  min-height: 35px;
 }
 
 .command-snippets-panel {
@@ -81,7 +95,6 @@ import Terminal from "./components/Terminal.vue"
   flex-direction: column;
   gap: 10px;
   margin: 10px;
-  width: 180px;
 }
 
 .command-snippets-panel button {
