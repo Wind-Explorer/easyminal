@@ -1,10 +1,13 @@
 <script setup lang="ts">
 // Scripts for the component
-import { ref } from 'vue';
+import { resolveResource } from '@tauri-apps/api/path';
+import { readTextFile } from '@tauri-apps/api/fs';
 import { sanitizedWriteToPty } from '../composables/terminal';
 
 import CommandShortcutWithInput from './CommandShortcutWithInput.vue';
 
+// const resourcePath = await resolveResource('resources/command_shortcuts.json');
+// const parsedData = JSON.parse(await readTextFile(resourcePath))
 </script>
 
 <template>

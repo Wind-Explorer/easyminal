@@ -22,7 +22,9 @@ import WebSnippets from "./components/WebSnippets.vue";
         <Terminal class="terminal" />
       </div>
       <div class="shortcuts-row">
-        <CommandShortcuts id="command-shortcuts" />
+        <Suspense>
+          <CommandShortcuts id="command-shortcuts" />
+        </Suspense>
       </div>
     </div>
   </div>

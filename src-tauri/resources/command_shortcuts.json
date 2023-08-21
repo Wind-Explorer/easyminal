@@ -1,0 +1,76 @@
+{
+  "commands": [
+    {
+      "title": "where am i?",
+      "command": {
+        "linux": "pwd",
+        "darwin": "pwd",
+        "windows": "Get-Location"
+      },
+      "input_instructions": null
+    },
+    {
+      "title": "clear terminal",
+      "command": {
+        "linux": "clear",
+        "darwin": "clear",
+        "windows": "Clear-Host"
+      },
+      "input_instructions": null
+    },
+    {
+      "title": "list things in this folder",
+      "command": {
+        "linux": "ls",
+        "darwin": "ls",
+        "windows": "Get-ChildItem"
+      },
+      "input_instructions": null
+    },
+    {
+      "title": "move into another folder",
+      "command": {
+        "linux": "cd &VAR",
+        "darwin": "cd &VAR",
+        "windows": "Set-Location &VAR"
+      },
+      "input_instructions": "name of folder"
+    },
+    {
+      "title": "create a new file",
+      "command": {
+        "linux": "touch &VAR",
+        "darwin": "touch &VAR",
+        "windows": "New-Item -ItemType File &VAR"
+      },
+      "input_instructions": "name of new file"
+    },
+    {
+      "title": "create a new folder",
+      "command": {
+        "linux": "mkdir &VAR",
+        "darwin": "mkdir &VAR",
+        "windows": "New-Item -ItemType Directory &VAR"
+      },
+      "input_instructions": "name of new folder"
+    },
+    {
+      "title": "delete a file",
+      "command": {
+        "linux": "rm &VAR",
+        "darwin": "rm &VAR",
+        "windows": "Remove-Item &VAR"
+      },
+      "input_instructions": "name of file to delete"
+    },
+    {
+      "title": "delete a folder",
+      "command": {
+        "linux": "rm -r &VAR",
+        "darwin": "rm -r &VAR",
+        "windows": "Remove-Item -Recurse &VAR"
+      },
+      "input_instructions": "name of a folder to delete"
+    }
+  ]
+}
