@@ -20,7 +20,7 @@ let user_input = ref('');
       sanitizedWriteToPty((props.command_to_execute as string)
         .replace('&VAR', user_input));
       user_input = '';
-    }">
+    }" :disabled="user_input.length <= 0">
       {{ action_title }}
     </button>
   </div>
