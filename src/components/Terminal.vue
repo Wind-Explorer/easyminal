@@ -6,6 +6,7 @@ import "xterm/css/xterm.css";
 import { invoke } from "@tauri-apps/api";
 import { Event, listen } from "@tauri-apps/api/event";
 import { onMounted } from "vue";
+import { writeToPty } from "../composables/terminal"
 
 const fitAddon = new FitAddon();
 const term = new Terminal({
@@ -30,12 +31,6 @@ function writeToTerminal(ev: Event<string>) {
   term.write(ev.payload)
 }
 
-// Write data from the terminal to the pty
-function writeToPty(data: string) {
-  void invoke("async_write_to_pty", {
-    data,
-  });
-}
 term.onData(writeToPty);
 window.addEventListener("resize", fitTerminal);
 listen("data", writeToTerminal)

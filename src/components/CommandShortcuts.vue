@@ -1,11 +1,12 @@
 <script setup lang="ts">
 // Scripts for the component
+import { writeToPty } from '../composables/terminal';
 </script>
 
 <template>
   <div class="container">
     <!-- HTML elements for the component -->
-    <button>List content of directory</button>
+    <button @click="writeToPty('ls\n')">List content of directory</button>
     <button>Move into another directory</button>
     <button>Delete a file</button>
     <button>Create a new file</button>
