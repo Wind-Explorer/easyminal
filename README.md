@@ -1,14 +1,15 @@
 # Easyminal
 
-#### The terminal for the average users
+#### Terminal for the average users
 
 ### --- ⚠️ Work in progress ---
 
 ## Technologies used
 
-* [Tauri toolkit](https://tauri.app/)
+* [Tauri](https://tauri.app/)
 * [Vue.js](https://vuejs.org/)
 * [xterm.js](https://xtermjs.org/)
+* [portable-pty](https://crates.io/crates/portable-pty)
 
 ## Build instructions
 
@@ -29,3 +30,7 @@ yarn install
 # Run tauri startup script
 yarn tauri dev
 ```
+
+<hr>
+
+This project was built on top of code taken from [tauri-terminal](https://github.com/marc2332/tauri-terminal).
