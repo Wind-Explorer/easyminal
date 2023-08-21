@@ -68,6 +68,11 @@ textarea {
   transition: unset;
 }
 
+input,
+textarea {
+  box-shadow: inset 0 -1px 0px var(--foreground-color-fade);
+}
+
 input:focus,
 textarea:focus {
   box-shadow: inset 0 -2px 0px var(--accent-color);

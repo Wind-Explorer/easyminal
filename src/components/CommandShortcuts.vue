@@ -1,19 +1,25 @@
 <script setup lang="ts">
 // Scripts for the component
-import { writeToPty } from '../composables/terminal';
+import { ref } from 'vue';
+import { sanitizedWriteToPty } from '../composables/terminal';
+
+import CommandShortcutWithInput from './CommandShortcutWithInput.vue';
+
 </script>
 
 <template>
   <div class="container">
     <!-- HTML elements for the component -->
-    <button @click="writeToPty('ls\n')">List content of directory</button>
-    <button>Move into another directory</button>
-    <button>Delete a file</button>
-    <button>Create a new file</button>
-    <button>List content of directory</button>
-    <button>Move into another directory</button>
-    <button>Delete a file</button>
-    <button>Create a new file</button>
+    <button @click="sanitizedWriteToPty('pwd\n')">(pwd) Where am I?</button>
+    <button @click="sanitizedWriteToPty('clear\n')">(clear) Clear terminal</button>
+    <button @click="sanitizedWriteToPty('ls\n')">(ls) List content of current folder</button>
+    <CommandShortcutWithInput action_title="(cd) Change directory" input_placeholder="Enter name of a folder"
+      command_to_execute="cd &VAR" />
+    <button @click="sanitizedWriteToPty('cd ..\n')">(cd ..) Fall back to previous folder</button>
+    <CommandShortcutWithInput action_title="(rm -rf) Delete" input_placeholder="Enter name of file / folder"
+      command_to_execute="rm -rf &VAR" />
+    <CommandShortcutWithInput action_title="(touch) Create" input_placeholder="Enter name of file"
+      command_to_execute="touch &VAR" />
   </div>
 </template>
 

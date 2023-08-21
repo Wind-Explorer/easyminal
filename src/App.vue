@@ -22,7 +22,7 @@ import WebSnippets from "./components/WebSnippets.vue";
         <Terminal class="terminal" />
       </div>
       <div class="shortcuts-row">
-        <CommandShortcuts />
+        <CommandShortcuts id="command-shortcuts" />
       </div>
     </div>
   </div>
@@ -56,7 +56,7 @@ import WebSnippets from "./components/WebSnippets.vue";
   position: relative;
   padding: 20px;
   background-color: #2f2f2f;
-  height: 100%;
+  height: calc(100% - 110px);
   border-left: 1px solid var(--border-color);
   border-bottom: 1px solid var(--border-color);
   border-bottom-left-radius: var(--universal-border-radius);
@@ -68,10 +68,9 @@ import WebSnippets from "./components/WebSnippets.vue";
 
 .shortcuts-row {
   position: relative;
-  padding-bottom: 10px;
   overflow: scroll;
   white-space: nowrap;
-  min-height: 42px;
+  padding-bottom: 10px;
 }
 
 .command-snippets-panel {

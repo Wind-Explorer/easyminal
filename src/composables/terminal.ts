@@ -6,3 +6,8 @@ export function writeToPty(data: string) {
     data,
   });
 }
+
+// Sanitize the command before writing it to the pty
+export function sanitizedWriteToPty(command: string) {
+  writeToPty(command.replace(/([&;|<>])/g, ''));
+}
