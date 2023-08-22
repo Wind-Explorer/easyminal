@@ -41,6 +41,16 @@
       "input_instructions": "name of folder"
     },
     {
+      "title": "move back to previous folder",
+      "description": "changes your current location one folder backwards.",
+      "command": {
+        "linux": "cd ..",
+        "macos": "cd ..",
+        "windows": "Set-Location .."
+      },
+      "input_instructions": null
+    },
+    {
       "title": "create a new file",
       "description": "creates a new blank file at where you are in with the name you gave.",
       "command": {
