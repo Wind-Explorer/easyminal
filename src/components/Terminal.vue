@@ -7,6 +7,7 @@ import { invoke } from "@tauri-apps/api";
 import { Event, listen } from "@tauri-apps/api/event";
 import { onMounted } from "vue";
 import { writeToPty } from "../composables/terminal"
+import { write } from "fs";
 
 const fitAddon = new FitAddon();
 const term = new Terminal({
@@ -39,6 +40,7 @@ fitTerminal();
 onMounted(() => {
   const terminalElement = document.getElementById("terminal") as HTMLElement;
   term.open(terminalElement);
+  writeToPty("# welcome to easyminal :D\n");
 })
 </script>
 
