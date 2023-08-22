@@ -2,27 +2,20 @@
 // Scripts for the component
 import { resolveResource } from '@tauri-apps/api/path';
 import { readTextFile } from '@tauri-apps/api/fs';
-import { sanitizedWriteToPty } from '../composables/terminal';
 
-import CommandShortcutWithInput from './CommandShortcutWithInput.vue';
+import CommandShortcut from './CommandShortcut.vue';
 
-// const resourcePath = await resolveResource('resources/command_shortcuts.json');
-// const parsedData = JSON.parse(await readTextFile(resourcePath))
+const command_shortcuts_json = await resolveResource('resources/command_shortcuts.json');
+const command_shortcuts_data = JSON.parse(await readTextFile(command_shortcuts_json))
 </script>
 
 <template>
   <div class="container">
     <!-- HTML elements for the component -->
-    <button @click="sanitizedWriteToPty('pwd\n')">(pwd) Where am I?</button>
-    <button @click="sanitizedWriteToPty('clear\n')">(clear) Clear terminal</button>
-    <button @click="sanitizedWriteToPty('ls\n')">(ls) List content of current folder</button>
-    <CommandShortcutWithInput action_title="(cd) Change directory" input_placeholder="Enter name of a folder"
-      command_to_execute="cd &VAR" />
-    <button @click="sanitizedWriteToPty('cd ..\n')">(cd ..) Fall back to previous folder</button>
-    <CommandShortcutWithInput action_title="(rm -rf) Delete" input_placeholder="Enter name of file / folder"
-      command_to_execute="rm -rf &VAR" />
-    <CommandShortcutWithInput action_title="(touch) Create" input_placeholder="Enter name of file"
-      command_to_execute="touch &VAR" />
+    <div class="command-shortcuts" v-for="command in command_shortcuts_data.commands ">
+      <CommandShortcut :action_title="command.title" :input_placeholder="command.input_instructions"
+        :command_to_execute="command.command['darwin']" />
+    </div>
   </div>
 </template>
 

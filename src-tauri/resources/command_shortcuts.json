@@ -48,8 +48,8 @@
     {
       "title": "create a new folder",
       "command": {
-        "linux": "mkdir &VAR",
-        "darwin": "mkdir &VAR",
+        "linux": "mkdir -p &VAR",
+        "darwin": "mkdir -p &VAR",
         "windows": "New-Item -ItemType Directory &VAR"
       },
       "input_instructions": "name of new folder"

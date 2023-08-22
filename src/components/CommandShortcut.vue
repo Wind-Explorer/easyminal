@@ -15,12 +15,12 @@ let user_input = ref('');
 <template>
   <div class="container">
     <!-- HTML elements for the component -->
-    <input type="text" v-model="user_input" :placeholder="input_placeholder" />
+    <input type="text" v-model="user_input" :placeholder="input_placeholder" :hidden="input_placeholder == null" />
     <button @click="() => {
       sanitizedWriteToPty((props.command_to_execute as string)
         .replace('&VAR', user_input));
       user_input = '';
-    }" :disabled="user_input.length <= 0">
+    }" :disabled="user_input.length <= 0 && input_placeholder != null">
       {{ action_title }}
     </button>
   </div>
