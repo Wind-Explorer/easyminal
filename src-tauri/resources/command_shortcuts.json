@@ -2,6 +2,7 @@
   "commands": [
     {
       "title": "where am i?",
+      "description": "tells you which folder you are in.",
       "command": {
         "linux": "pwd",
         "darwin": "pwd",
@@ -11,6 +12,7 @@
     },
     {
       "title": "clear terminal",
+      "description": "clears the terminal screen.",
       "command": {
         "linux": "clear",
         "darwin": "clear",
@@ -20,6 +22,7 @@
     },
     {
       "title": "list things in this folder",
+      "description": "shows you files and folders present in the current folder.",
       "command": {
         "linux": "ls",
         "darwin": "ls",
@@ -29,6 +32,7 @@
     },
     {
       "title": "move into another folder",
+      "description": "changes your current location from one folder to another.",
       "command": {
         "linux": "cd &VAR",
         "darwin": "cd &VAR",
@@ -38,6 +42,7 @@
     },
     {
       "title": "create a new file",
+      "description": "creates a new blank file at where you are in with the name you gave.",
       "command": {
         "linux": "touch &VAR",
         "darwin": "touch &VAR",
@@ -47,6 +52,7 @@
     },
     {
       "title": "create a new folder",
+      "description": "creates a new empty folder at where you are in with the name you gave.",
       "command": {
         "linux": "mkdir -p &VAR",
         "darwin": "mkdir -p &VAR",
@@ -56,6 +62,7 @@
     },
     {
       "title": "delete a file",
+      "description": "delete the file you named from the folder you are in.",
       "command": {
         "linux": "rm &VAR",
         "darwin": "rm &VAR",
@@ -65,6 +72,7 @@
     },
     {
       "title": "delete a folder",
+      "description": "delete the folder you named with everything in it from the folder you are in.",
       "command": {
         "linux": "rm -r &VAR",
         "darwin": "rm -r &VAR",
