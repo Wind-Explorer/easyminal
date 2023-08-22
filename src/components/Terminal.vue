@@ -12,7 +12,7 @@ const fitAddon = new FitAddon();
 const term = new Terminal({
   fontFamily: "Jetbrains Mono",
   theme: {
-    background: "rgb(47, 47, 47)",
+    background: "rgba(0,0,0,0)",
   }
 });
 term.loadAddon(fitAddon);
