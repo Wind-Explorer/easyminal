@@ -5,7 +5,7 @@
       "description": "tells you which folder you are in.",
       "command": {
         "linux": "pwd",
-        "darwin": "pwd",
+        "macos": "pwd",
         "windows": "Get-Location"
       },
       "input_instructions": null
@@ -15,7 +15,7 @@
       "description": "clears the terminal screen.",
       "command": {
         "linux": "clear",
-        "darwin": "clear",
+        "macos": "clear",
         "windows": "Clear-Host"
       },
       "input_instructions": null
@@ -25,7 +25,7 @@
       "description": "shows you files and folders present in the current folder.",
       "command": {
         "linux": "ls",
-        "darwin": "ls",
+        "macos": "ls",
         "windows": "Get-ChildItem"
       },
       "input_instructions": null
@@ -35,7 +35,7 @@
       "description": "changes your current location from one folder to another.",
       "command": {
         "linux": "cd &VAR",
-        "darwin": "cd &VAR",
+        "macos": "cd &VAR",
         "windows": "Set-Location &VAR"
       },
       "input_instructions": "name of folder"
@@ -45,7 +45,7 @@
       "description": "creates a new blank file at where you are in with the name you gave.",
       "command": {
         "linux": "touch &VAR",
-        "darwin": "touch &VAR",
+        "macos": "touch &VAR",
         "windows": "New-Item -ItemType File &VAR"
       },
       "input_instructions": "name of new file"
@@ -55,7 +55,7 @@
       "description": "creates a new empty folder at where you are in with the name you gave.",
       "command": {
         "linux": "mkdir -p &VAR",
-        "darwin": "mkdir -p &VAR",
+        "macos": "mkdir -p &VAR",
         "windows": "New-Item -ItemType Directory &VAR"
       },
       "input_instructions": "name of new folder"
@@ -65,7 +65,7 @@
       "description": "delete the file you named from the folder you are in.",
       "command": {
         "linux": "rm &VAR",
-        "darwin": "rm &VAR",
+        "macos": "rm &VAR",
         "windows": "Remove-Item &VAR"
       },
       "input_instructions": "name of file to delete"
@@ -75,7 +75,7 @@
       "description": "delete the folder you named with everything in it from the folder you are in.",
       "command": {
         "linux": "rm -r &VAR",
-        "darwin": "rm -r &VAR",
+        "macos": "rm -r &VAR",
         "windows": "Remove-Item -Recurse &VAR"
       },
       "input_instructions": "name of a folder to delete"

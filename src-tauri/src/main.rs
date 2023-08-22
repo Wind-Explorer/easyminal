@@ -17,6 +17,13 @@ struct AppState {
 }
 
 #[tauri::command]
+// Returns the identifier of current operating system. Possible values include "windows", "linux" and "macos".
+fn resolve_current_os() -> String {
+    let os = std::env::consts::OS;
+    os.to_string()
+}
+
+#[tauri::command]
 async fn async_write_to_pty(data: &str, state: State<'_, AppState>) -> Result<(), ()> {
     write!(state.writer.lock().await, "{}", data).map_err(|_| ())
 }
@@ -63,7 +70,7 @@ fn main() {
         };
         cmd = CommandBuilder::new(user_shell);
     }
-    
+
     let mut child = pty_pair.slave.spawn_command(cmd).unwrap();
 
     thread::spawn(move || {
@@ -99,8 +106,9 @@ fn main() {
             writer: Arc::new(AsyncMutex::new(writer)),
         })
         .invoke_handler(tauri::generate_handler![
+            resolve_current_os,
             async_write_to_pty,
-            async_resize_pty
+            async_resize_pty,
         ])
         .on_window_event(|e| {
             if let tauri::WindowEvent::Resized(_) = e.event() {
