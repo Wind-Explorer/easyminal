@@ -10,11 +10,11 @@
       <div class="settings">
         <div class="settings-entry">
           <label for="web-snippets-source">Web snippets source</label>
-          <input id="web-snippets-source" type="url" />
+          <input id="web-snippets-source" type="url" placeholder="https://link.to.source/snippets.json" />
         </div>
         <div class="settings-entry">
           <label for="terminal-font">Terminal font</label>
-          <input id="terminal-font" type="url" />
+          <input id="terminal-font" type="url" placeholder="Jetbrains Mono" />
         </div>
       </div>
       <button id="back-button" v-on:click="$router.go(-1)">Done</button>
