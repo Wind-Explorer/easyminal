@@ -10,6 +10,11 @@ const props = defineProps({
 });
 
 let user_input = ref('');
+let executable_command = props.command_to_execute;
+
+if (!props.input_placeholder && !(props.command_to_execute as string).includes("&VAR")) {
+  executable_command += "\n";
+}
 </script>
 
 <template>
@@ -17,7 +22,7 @@ let user_input = ref('');
     <!-- HTML elements for the component -->
     <input type="text" v-model="user_input" :placeholder="input_placeholder" :hidden="input_placeholder == null" />
     <button @click="() => {
-      sanitizedWriteToPty((props.command_to_execute as string)
+      sanitizedWriteToPty((executable_command as string)
         .replace('&VAR', user_input));
       user_input = '';
     }" :disabled="user_input.length <= 0 && input_placeholder != null">
