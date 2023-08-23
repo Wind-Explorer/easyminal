@@ -11,7 +11,7 @@ import { write } from "fs";
 
 const fitAddon = new FitAddon();
 const term = new Terminal({
-  fontFamily: "Jetbrains Mono",
+  fontFamily: "monospace",
   theme: {
     background: "rgba(0,0,0,0)",
   }
