@@ -23,12 +23,12 @@
 
 ```bash
 # Install required modules
-yarn install
+pnpm install
 ```
 
 ```bash
 # Run tauri startup script
-yarn tauri dev
+pnpm tauri dev
 ```
 
 <hr>
